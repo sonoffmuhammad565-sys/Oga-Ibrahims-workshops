@@ -1,0 +1,138 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oga Ibrahim Auto Workshop</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #000000, #141E30, #243B55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: #111;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 0 50px rgba(0,255,255,0.5);
+    text-align: center;
+    width: 370px;
+    color: white;
+}
+
+h1 {
+    margin: 10px 0;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.whatsapp {
+    background: linear-gradient(to right, #25D366, #128C7E);
+    color: white;
+}
+
+.next {
+    background: linear-gradient(to right, #ff512f, #dd2476);
+    color: white;
+}
+
+.service {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>🔧 Oga Ibrahim Auto Workshop</h1>
+    <p>Professional Auto Diagnosis & Programming 🔥</p>
+
+    <button class="btn whatsapp" onclick="generalChat()">
+        Chat on WhatsApp 💬
+    </button>
+
+    <button class="btn next" onclick="showServices()">
+        View Services ▶
+    </button>
+</div>
+
+<script>
+
+function generalChat() {
+    window.open("https://wa.me/2349015076191", "_blank");
+}
+
+function showServices() {
+    document.body.innerHTML = `
+    <div style="padding:30px; background:black; min-height:100vh; font-family:Segoe UI; text-align:center; color:white;">
+        <h2>How Can We Help You?</h2>
+
+        <button class="btn service" onclick="sendService('Key Lost (Key Programming)', '20,000 NGN')">
+            🔑 Key Lost (Key Programming) -- ₦20,000
+        </button>
+
+        <button class="btn service" onclick="sendService('Auto Vehicle Scan', '5,000 NGN')">
+            🚗 Auto Vehicle Scan -- ₦5,000
+        </button>
+
+        <button class="btn service" onclick="sendService('Down Programming (Free A Box)', '7,000 NGN')">
+            💻 Down Programming (Free A Box) -- ₦7,000
+        </button>
+
+        <button class="btn service" onclick="sendService('Down Programming (Virgin A Box)', '7,000 NGN')">
+            ⚙ Down Programming (Virgin A Box) -- ₦7,000
+        </button>
+
+        <button class="btn service" onclick="sendService('Electrical Issue', 'Price after inspection')">
+            🔌 Electrical Issue -- Price after inspection
+        </button>
+
+        <br><br>
+
+        <button onclick="location.reload()" style="
+            padding:12px 20px;
+            border:none;
+            border-radius:50px;
+            background:white;
+            font-weight:bold;
+            cursor:pointer;">
+            ⬅ Back
+        </button>
+    </div>
+    `;
+}
+
+function sendService(serviceName, price) {
+    let message = "Hello Oga Ibrahim,%0A%0AI would like to book:%0AService: " 
+                  + serviceName + "%0APrice: " + price 
+                  + "%0A%0APlease assist me.";
+                  
+    let url = "https://wa.me/2349015076191?text=" + message;
+    window.open(url, "_blank");
+}
+
+</script>
+
+</body>
+</html>
